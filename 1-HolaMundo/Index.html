@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola mundo Vue</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+<body>
+   <div id="app">
+
+    <!-- 
+       <h1> {{user.title}} </h1>
+       <h2> {{user.age < 18 ? "No puedes pasar":"Puedes pasar"}} </h2>
+       <h1> {{user.movies[0]}} </h1>
+        <hr>
+       <a href="https://google.com" target="_blank">Google</a> 
+       
+       <a v-bind:href="user.url" target="_blank">Google</a>
+       <hr>
+       <img src="https://cdn.pixabay.com/photo/2021/12/14/21/19/dragonfly-6871359_960_720.jpg" alt="" width="300" height="300">
+       <img :src="user.picture" alt="" height="300" width="300"> 
+    -->
+
+    <!-- 
+        <h1 :class="user.classValue">
+        {{user.age > 18 ? user.classValue = "good": user.classValue= "error"}}
+        </h1> 
+    -->
+
+    <!-- 
+        <h1 v-if="user.age <= 0 || user.age > 110" class="rango_err">Edad fuera de rango</h1>
+        <h1 v-else-if="user.age >= 18">Eres mayor de edad</h1>
+        <h1 v-else="" class="error">Eres menor de edad</h1>
+        </div>
+    -->
+
+    <ul>
+        <li v-for="(movie, index) in user.movies" :key="index"> 
+            {{index}} = {{movie}}
+        </li> 
+    </ul>
+
+   <script src="./main.js"></script>
+   <script>
+       const mountApp = app.mount("#app")
+   </script>
+
+</body>
+</html>
