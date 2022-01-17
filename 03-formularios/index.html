@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <!-- CDN de Vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+    <div id="app">
+        <h1>{{Title}}</h1>
+        <!-- v-bind trae datos de manera dinámica -->
+        <!-- v-model -->
+        <!-- v-on/@ para indicar un evento -->
+        <!-- prevent para no recargar página -->
+        <form @submit.prevent="handleSubmit()">
+            <!-- tipo texto -->
+            <input type="text" placeholder="Nombre" v-model="datos.name">
+            <!-- tipo numerico -->
+            <input type="number" v-model.number="datos.age" min="15" max="100">
+            <!-- tipo check -->
+            <hr>
+            <h2>Lenguajes favoritos</h2>
+
+            <input type="checkbox" id="Js" value="Js" v-model="datos.langs">
+            <label for="Js">JavaScript</label>
+
+            <input type="checkbox" id="Html" value="Html" v-model="datos.langs">
+            <label for="Hmtl">Html</label>
+
+            <input type="checkbox" id="Php" value="Php" v-model="datos.langs">
+            <label for="Php">Php</label>
+
+            <!-- tipo radio -->
+            <h2>Género</h2>
+            <input type="radio" id="hombre" value="h" v-model="datos.gener">
+            <label for="hombre">Hombre</label>
+
+            <input type="radio" id="mujer" value="m" v-model="datos.gener">
+            <label for="mujer">mujer</label>
+             
+            <hr>
+
+            <input type="submit" value="">
+        </form>
+        <p>{{datos}}</p>
+    </div>
+
+
+    <script src="./Js/main.js"></script>
+    <script src="./Js/mountApp.js"></script>
+</body>
+</html>
