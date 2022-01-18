@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peticiones en Vue</title>
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js"></script>
+  
+  </head>
+  <body>
+
+    <div id="app">
+      <h1>{{title}}</h1>
+      <hr />
+        <form @submit.prevent="getPost">
+            <label>ID POST <input type="number" v-model.number="post"></label>
+            <input type="submit" value="Get Post">
+        </form>
+     <div class="container">
+         <p>Nombre: {{datos.name}}</p>
+         <p>E-mail: {{datos.email}}</p>
+         <p>Phone: {{datos.phone}}</p>
+         <p>Nombre usuario: <strong>{{datos.username}}</strong></p>
+     </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/mountApp.js"></script>
+  </body>
+</html>
